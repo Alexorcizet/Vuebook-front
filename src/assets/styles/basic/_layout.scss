@@ -1,0 +1,13 @@
+.main-layout {
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+    grid-template-areas:
+        'header header'
+        'sidebar main '
+    ;
+    grid-template-rows: 56px calc(100vh - 56px);
+    
+    .main-content {
+        grid-area: main; 
+    }
+}
