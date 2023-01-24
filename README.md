@@ -1,21 +1,5 @@
-# FacebookClone-front
+# Description 
+Frontend of a facebook clone SPA in deveopment
 
+# Link
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-# Vuebook-front
