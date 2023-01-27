@@ -7,17 +7,12 @@
       </router-link>
       <router-link to=""
         ><font-awesome-icon icon="fa-solid fa-user" />
-        <span>UserName</span></router-link
+        <span>{{ name }}</span></router-link
       >
       <hr />
       <router-link to=""
         ><font-awesome-icon icon="fa-solid fa-user-group" />
         <span>Friends</span></router-link
-      >
-      <router-link to=""
-        ><font-awesome-icon icon="fa-solid fa-user-clock" /><span
-          >Most Recent</span
-        ></router-link
       >
       <router-link to=""
         ><font-awesome-icon icon="fa-solid fa-users" />
@@ -78,7 +73,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    name() {
+      const user = this.$store.getters.user;
+      return `${user.firstName} ${user.lastName}`;
+    },
+  },
+};
 </script>
 
 <style>

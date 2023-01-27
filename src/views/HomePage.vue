@@ -2,7 +2,8 @@
   <section class="home-page">
     <section class="main-home-content">
       <StoriesReelsRooms />
-      <Post />
+      <CreatePost />
+      <PostList />
     </section>
     <Sponsored />
   </section>
@@ -11,12 +12,14 @@
 <script>
 import Sponsored from "../components/Sponsored.vue";
 import StoriesReelsRooms from "../components/StoriesReelsRooms.vue";
-import Post from "../components/Post.vue";
+import CreatePost from "../components/CreatePost.vue";
+import PostList from "../components/PostList.vue";
 export default {
   components: {
     Sponsored,
     StoriesReelsRooms,
-    Post,
+    CreatePost,
+    PostList,
   },
 };
 </script>

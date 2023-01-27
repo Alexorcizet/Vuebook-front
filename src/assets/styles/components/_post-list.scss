@@ -1,0 +1,45 @@
+.posts-list {
+    .post-preview {
+        background-color: #fff;
+        border-radius: 15px;
+        margin: 30px 0;
+
+        >* {
+            padding: 15px;
+        }
+
+        .post-info {
+            justify-content: space-between;
+            align-items: center;
+
+            .user-img {
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    margin-inline-end: 10px;
+                }
+            }
+
+            .close-and-options {
+                img {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        .post-data {
+
+            .post-text {
+                padding-block-end: 10px;
+            }
+
+            .post-img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
