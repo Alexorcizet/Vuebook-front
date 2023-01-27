@@ -1,5 +1,7 @@
-.home-page{
+.home-page {
     grid-area: main;
     display: grid;
-    grid-template-columns: 45vw 30vw;
+    grid-template-columns: calc(100vw - 60vw) calc(100vw - 80vw);
+    gap: 10vw;
+    margin-top: 15px;
 }

@@ -1,0 +1,131 @@
+.post-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #beb7b7b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .post-form {
+        width: 500px;
+        min-height: 428px;
+        background-color: #fff;
+        border-radius: 25px;
+        flex-direction: column;
+
+
+        .form-header {
+            padding: 10px;
+            height: 60px;
+            justify-content: space-between;
+            align-items: center;
+
+            :first-child:not(:last-child) {
+                flex: 12;
+                text-align: center;
+                font-weight: 700;
+                font-size: 1.2em;
+            }
+
+            :last-child {
+                flex: 1;
+
+                button {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    border: none;
+                    background-color: #e4e6eb;
+
+                    path {
+                        color: #828487;
+                    }
+                }
+            }
+
+        }
+
+        .post-settings {
+            flex: 1;
+            padding: 0 10px 0;
+            display: flex;
+            flex-direction: column;
+
+            .form-info {
+                margin: 15px 0;
+
+                p {
+                    font-weight: 600;
+                }
+
+                .form-img-container {
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .post-audience {
+                    .audience {
+                        background-color: #e4e6eb;
+                        justify-content: center;
+                        align-items: center;
+                        width: 90px;
+                        gap: 5px;
+                        padding-inline-start: 5px;
+                        padding-inline-end: 5px;
+                        border-radius: 10px;
+                        font-size: 0.85em;
+                        font-weight: 600;
+
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+
+            }
+
+            .post-text-container {
+                min-height: 154px;
+
+
+
+
+                .post-text-area {
+                    min-height: 80px;
+                    padding-bottom: 40px;
+
+                    p {
+                        font-size: 1.50em;
+                        color: #828487;
+                        text-indent: 5px;
+                    }
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+
+                    &:empty:before {
+                        content: attr(data-placeholder)
+                    }
+                }
+
+
+            }
+
+
+
+
+        }
+
+
+    }
+
+}

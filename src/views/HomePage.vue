@@ -1,17 +1,22 @@
 <template>
   <section class="home-page">
-    <section>
-      <h1>Hello home Page</h1>
+    <section class="main-home-content">
+      <StoriesReelsRooms />
+      <Post />
     </section>
     <Sponsored />
   </section>
 </template>
 
 <script>
-import Sponsored from '../components/Sponsored.vue'
+import Sponsored from "../components/Sponsored.vue";
+import StoriesReelsRooms from "../components/StoriesReelsRooms.vue";
+import Post from "../components/Post.vue";
 export default {
   components: {
-    Sponsored
+    Sponsored,
+    StoriesReelsRooms,
+    Post,
   },
 };
 </script>
