@@ -4,11 +4,8 @@ import { storageService } from "./storage.service.js"
 const POSTS_DB = "postsDB"
 
 export async function getPosts(userId) {
-    let allPosts = await storageService.load(POSTS_DB)
-    if (!allPosts || allPosts.length <= 0) {
-        allPosts = posts.filter(post => post.createdBy._id === userId)
-        storageService.save(POSTS_DB, allPosts)
-    }
+    let allPosts = await storageService.load(POSTS_DB) || []
+
     return allPosts
 }
 
