@@ -103,14 +103,23 @@ export default {
   data() {
     return {
       msg: "",
+      img: "",
     };
   },
   methods: {
     setMsg(ev) {
       this.msg = ev.target.innerText;
     },
-    postIt() {
+    async postIt() {
       console.log(this.msg);
+      let newPost = {
+        msg: this.msg,
+        imgUrl: "",
+        creator: this.user._id,
+        creatorFirstName: this.user.firstName,
+        creatorLastName: this.user.lastName,
+      };
+      await this.$store.dispatch({ type: "createPost", post: newPost });
       this.closePost();
     },
     closePost() {

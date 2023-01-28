@@ -41,9 +41,6 @@ export default {
       required: true,
     },
   },
-  created() {
-    console.log(this.props);
-  },
   computed: {
     user() {
       return this.$store.getters.user;

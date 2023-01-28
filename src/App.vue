@@ -9,7 +9,7 @@ export default {
   },
   async created() {
     await this.getUser();
-    await this.getPosts();
+    await this.getPosts(this.user._id);
   },
   methods: {
     getUser() {
@@ -19,6 +19,11 @@ export default {
       this.$store.dispatch({ type: "getPosts" });
     },
   },
+  computed:{
+    user(){
+      return this.$store.getters.user
+    }
+  },  
   components: {
     AppHeader,
     SideBar,

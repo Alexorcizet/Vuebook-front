@@ -1,29 +1,23 @@
 import { utilService } from './util-service.js'
-const posts = [
-    {
-        _id: utilService.makeId(),
-        text: 'Hello there, im a post',
-        imgUrl: "https://res.cloudinary.com/dk9b84f0u/image/upload/v1663574364/Symphny/metal_jdjaa5.jpg",
-        createdAt: '1674749759000',
-        createdBy: {
-            _id: '56a4sd6a8s4d65asdas',
-            firstName: 'Alex',
-            lastName: 'Hlebnikov'
-        },
-        likedBy: []
-    }
-]
+import { storageService } from "./storage.service.js"
 
-export function getPosts() {
-    let allPosts = posts.filter(post => post.createdBy._id === '56a4sd6a8s4d65asdas')
+const POSTS_DB = "postsDB"
+
+export async function getPosts(userId) {
+    let allPosts = await storageService.load(POSTS_DB)
+    if (!allPosts || allPosts.length <= 0) {
+        allPosts = posts.filter(post => post.createdBy._id === userId)
+        storageService.save(POSTS_DB, allPosts)
+    }
     return allPosts
 }
 
-export function createPost(post) {
+export async function createPost(post) {
+    let posts = await storageService.load(POSTS_DB)
     let newPost = {
         _id: utilService.makeId(),
         text: post.msg,
-        imgUrl: post.img.url || '',
+        imgUrl: post.imgUrl,
         createdAt: Date.now(),
         createdBy: {
             _id: post.creator,
@@ -33,4 +27,7 @@ export function createPost(post) {
         likedBy: []
     }
     posts.push(newPost)
+    await storageService.save(POSTS_DB, posts)
+    console.log(newPost);
+    return newPost
 }
