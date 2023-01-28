@@ -15,7 +15,7 @@
       <div class="post-settings">
         <div class="form-info flex">
           <div class="form-img-container">
-            <img :src="user.imgUrl" alt="" />
+            <img :src="user.imgUrl" alt="user's img" />
           </div>
           <div class="post-audience">
             <p>{{ name }}</p>
@@ -28,12 +28,12 @@
         </div>
         <div class="post-text-container">
           <div class="text-input-container">
-            <p
+            <pre
               class="post-text-area"
               contenteditable
               @input="setMsg"
               :data-placeholder="placeHolder"
-            ></p>
+            ></pre>
           </div>
           <div class="post-over-background-img flex">
             <div class="background-options">A</div>

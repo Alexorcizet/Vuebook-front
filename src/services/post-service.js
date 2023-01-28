@@ -5,12 +5,11 @@ const POSTS_DB = "postsDB"
 
 export async function getPosts(userId) {
     let allPosts = await storageService.load(POSTS_DB) || []
-
     return allPosts
 }
 
 export async function createPost(post) {
-    let posts = await storageService.load(POSTS_DB)
+    let posts = await storageService.load(POSTS_DB) || []
     let newPost = {
         _id: utilService.makeId(),
         text: post.msg,

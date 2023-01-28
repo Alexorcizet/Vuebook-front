@@ -24,7 +24,7 @@
     </div>
     <div class="post-data">
       <div v-if="post.text" class="post-text">
-        <p>{{ post.text }}</p>
+        <pre>{{ post.text }}</pre>
       </div>
       <div v-if="post.imgUrl" class="post-img">
         <img :src="post.imgUrl" alt="" />
